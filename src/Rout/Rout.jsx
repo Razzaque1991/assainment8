@@ -6,6 +6,8 @@ import Home from '../component/Root/Home/Home';
 import Errorpage from '../Page/ErrorPage/Errorpage';
 import Mybook from '../Page/ErrorPage/MYBooking/Mybook';
 import Blog from '../Page/ErrorPage/Blog/Blog';
+import LawyerDetailPage from '../Page/ErrorPage/LawyerDetailPage/LawyerDetailPage';
+
 export const router = createBrowserRouter([
     {
         path:'/',
@@ -15,6 +17,7 @@ export const router = createBrowserRouter([
             {index:true, path:'/', Component:Home},
             {path:'my-bookings', Component:Mybook},
             {path:'blogs', Component:Blog},
+            { path: 'lawyer/:id', Component: LawyerDetailPage },
         ],
     },
     ]);
