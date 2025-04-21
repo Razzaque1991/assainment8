@@ -1,5 +1,6 @@
 import React from 'react';
 import BestLaw from './BestLaw/BestLaw';
+import Stats from './Stats/Stats';
 
 const Home = () => {
   return (
@@ -27,6 +28,7 @@ const Home = () => {
 
       {/* Best Lawyers Section */}
       <BestLaw />
+      <Stats></Stats>
     </>
   );
 };
