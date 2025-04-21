@@ -2,12 +2,6 @@ import React from 'react';
 import Menu from './Menu/Menu';
 
 const Header = () => {
-    // const links = <>
-    // <li className='m-2'>home</li>
-    // <li className='m-2'>about</li>
-    // <li className='m-2'>block</li>
-    // <li className='m-2'>contrack</li>
-    // </>
     return (
         <div>
              <nav>
@@ -20,9 +14,6 @@ const Header = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-       {/* {
-        links
-       } */}
        <Menu></Menu>
       </ul>
     </div>
@@ -30,9 +21,6 @@ const Header = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      {/* {
-        links
-      } */}
       <Menu></Menu>
     </ul>
   </div>
