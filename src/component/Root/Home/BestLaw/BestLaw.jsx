@@ -1,5 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import LawDetail from '../LawDetails/LawDetail';
+
+// Loading Spinner Component
+const Loading = () => (
+  <div className="flex justify-center items-center h-screen">
+    <div className="w-16 h-16 border-4 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
+  </div>
+);
 
 const BestLaw = () => {
     const [lawyers, setLawyers] = useState([]);
@@ -26,8 +33,11 @@ const BestLaw = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                {lawyers.slice(0, visibleLawyers).map(lawyer =><LawDetail lawyer={lawyer}></LawDetail>)}
+                {lawyers.slice(0, visibleLawyers).map(lawyer => (
+                    <LawDetail key={lawyer.id} lawyer={lawyer}></LawDetail>
+                ))}
             </div>
+
             {visibleLawyers < lawyers.length && (
                 <div className="text-center mt-6">
                     <button
@@ -42,4 +52,11 @@ const BestLaw = () => {
     );
 };
 
-export default BestLaw;
+// Wrap BestLaw component with Suspense to show the loading state while fetching data
+const BestLawWithSuspense = () => (
+  <Suspense fallback={<span className="loading loading-infinity loading-xl"></span>}>
+    <BestLaw />
+  </Suspense>
+);
+
+export default BestLawWithSuspense;
