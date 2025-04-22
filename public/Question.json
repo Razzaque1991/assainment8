@@ -1,0 +1,23 @@
+[
+    {
+      "question": "What is useState and how does it work in React?",
+      "answer": "`useState` is a React hook that allows functional components to hold and manage local state. It returns an array with two elements: the current state value and a function to update it.\n\nExample:\n```js\nconst [count, setCount] = useState(0);\n```\nCalling `setCount(newValue)` updates the state and re-renders the component."
+    },
+    {
+      "question": "What is the purpose of useEffect in React?",
+      "answer": "`useEffect` is a hook that lets you perform side effects in functional components, like fetching data, subscribing to events, or manually changing the DOM. It runs after the component renders.\n\nExample:\n```js\nuseEffect(() => {\n  fetchData();\n}, []);\n```\nThe empty array means it only runs once (on mount)."
+    },
+    {
+      "question": "What is a custom hook in React and when should you use one?",
+      "answer": "A custom hook is a reusable function that uses React hooks (like `useState`, `useEffect`, etc.) to share logic between components. It usually starts with the word `use`.\n\nUse a custom hook when you have logic shared between multiple components, like form handling or API fetching.\n\nExample:\n```js\nfunction useCounter() {\n  const [count, setCount] = useState(0);\n  const increment = () => setCount(c => c + 1);\n  return { count, increment };\n}\n```"
+    },
+    {
+      "question": "Difference between controlled and uncontrolled components. Which one is better?",
+      "answer": "**Controlled Component**: React controls the component's value via state.\n\n```js\n<input value={input} onChange={e => setInput(e.target.value)} />\n```\n\n**Uncontrolled Component**: The DOM handles the input value. You use `ref` to access it.\n\n```js\n<input ref={inputRef} />\n```\n\n**Controlled** is generally preferred in React apps because it gives you more control and makes the UI predictable."
+    },
+    {
+      "question": "Tell us something about useFormStatus() in React.",
+      "answer": "`useFormStatus()` is a React hook used in the new React Server Actions (React 18+). It provides real-time information about the status of a form, like whether it’s submitting.\n\nYou can use it to disable buttons or show loaders during form submission.\n\nExample:\n```js\nconst { pending } = useFormStatus();\n<button disabled={pending}>Submit</button>\n```\nThis disables the button while the form is submitting."
+    }
+  ]
+  
